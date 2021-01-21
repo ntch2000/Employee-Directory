@@ -4,73 +4,18 @@ import moment from "moment";
 
 const Home = () => {
   // set state
-  const [employees, setEmployees] = useState([
-    {
-      gender: "female",
-      name: {
-        title: "Mrs",
-        first: "Alice",
-        last: "Miller",
-      },
-      location: {
-        street: {
-          number: 9812,
-          name: "St. Catherine St",
-        },
-        city: "Belmont",
-        state: "Nova Scotia",
-        country: "Canada",
-        postcode: "A5R 4J5",
-        coordinates: {
-          latitude: "-59.9869",
-          longitude: "99.0660",
-        },
-        timezone: {
-          offset: "-3:30",
-          description: "Newfoundland",
-        },
-      },
-      email: "alice.miller@example.com",
-      login: {
-        uuid: "0a95fd08-e3da-4125-8cd3-7180e3ce9435",
-        username: "brownladybug189",
-        password: "southpark",
-        salt: "m1QeiwqV",
-        md5: "200e65e423fe6be4748efc392da0407f",
-        sha1: "3a448dd19bf47484fb979edcbdcb162194bde8a9",
-        sha256:
-          "709e7c48d79552693c9af6ac22720d5d586d780c16afa107f2fb091cc54fc859",
-      },
-      dob: {
-        date: "1974-08-19T01:03:10.909Z",
-        age: 47,
-      },
-      registered: {
-        date: "2003-01-29T18:00:24.514Z",
-        age: 18,
-      },
-      phone: "179-521-3880",
-      cell: "045-401-2449",
-      id: {
-        name: "",
-        value: null,
-      },
-      picture: {
-        large: "https://randomuser.me/api/portraits/women/90.jpg",
-        medium: "https://randomuser.me/api/portraits/med/women/90.jpg",
-        thumbnail: "https://randomuser.me/api/portraits/thumb/women/90.jpg",
-      },
-      nat: "CA",
-    },
-  ]);
+  const [employees, setEmployees] = useState([]);
 
+  // makes API call when page loads
   useEffect(() => {
     API.getEmployees()
       .then((res) => {
         console.log(res.data.results);
+        setEmployees(res.data.results);
       })
       .catch((err) => console.log(err));
   }, []);
+
   return (
     <div>
       <div className="row">
@@ -87,8 +32,9 @@ const Home = () => {
                 </tr>
               </thead>
               <tbody>
+                {/* maps over employee state and generates each row */}
                 {employees.map((employee) => (
-                  <tr>
+                  <tr key={employee.id}>
                     <td>
                       <img src={employee.picture.medium} alt="Employee Image" />
                     </td>
