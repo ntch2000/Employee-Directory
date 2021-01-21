@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import API from "../utils/API";
-import moment from "moment";
+import EmployeeRow from "../components/EmployeeRow";
 
 const Home = () => {
   // set state
@@ -24,7 +24,7 @@ const Home = () => {
             <table className="table">
               <thead>
                 <tr>
-                  <th scope="col">Image</th>
+                  <th scope="col">Employee Picture</th>
                   <th scope="col">Name</th>
                   <th scope="col">Phone</th>
                   <th scope="col">Email</th>
@@ -32,19 +32,17 @@ const Home = () => {
                 </tr>
               </thead>
               <tbody>
-                {/* maps over employee state and generates each row */}
+                {/* maps over employees state and passes properties to EmployeeRow component */}
                 {employees.map((employee) => (
-                  <tr key={employee.id}>
-                    <td>
-                      <img src={employee.picture.medium} alt="Employee Image" />
-                    </td>
-                    <td>
-                      {employee.name.first} {employee.name.last}
-                    </td>
-                    <td>{employee.phone}</td>
-                    <td>{employee.email}</td>
-                    <td>{moment(employee.dob.date).format("MM-DD-YYYY")}</td>
-                  </tr>
+                  <EmployeeRow
+                    key={employee.id.value}
+                    first={employee.name.first}
+                    last={employee.name.last}
+                    phone={employee.phone}
+                    email={employee.email}
+                    picture={employee.picture.large}
+                    dob={employee.dob.date}
+                  />
                 ))}
               </tbody>
             </table>
