@@ -6,6 +6,8 @@ const Home = () => {
   // set state
   const [employees, setEmployees] = useState([]);
 
+  const [sortOrder, setSortOrder] = useState("");
+
   // makes API call when page loads
   useEffect(() => {
     API.getEmployees()
@@ -16,6 +18,25 @@ const Home = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  const sortBy = () => {
+    let sortedEmployees = [];
+
+    if (!sortOrder || sortOrder === "ascending") {
+      sortedEmployees = [...employees].sort((a, b) =>
+        a.name.first < b.name.first ? -1 : 1
+      );
+      setSortOrder("descending");
+    } else {
+      sortedEmployees = [...employees].sort((a, b) =>
+        a.name.first > b.name.first ? -1 : 1
+      );
+      setSortOrder("ascending");
+    }
+    console.log("test");
+    console.log(sortedEmployees);
+    setEmployees(sortedEmployees);
+  };
+
   return (
     <div>
       <div className="row">
@@ -25,7 +46,9 @@ const Home = () => {
               <thead>
                 <tr>
                   <th scope="col">Employee Picture</th>
-                  <th scope="col">Name</th>
+                  <th scope="col" onClick={sortBy}>
+                    Name
+                  </th>
                   <th scope="col">Phone</th>
                   <th scope="col">Email</th>
                   <th scope="col">Date of Birth</th>

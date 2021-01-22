@@ -1,18 +1,18 @@
 import React from "react";
 import moment from "moment";
 
-const EmployeeRow = (props) => {
+const EmployeeRow = ({ picture, first, last, phone, email, dob }) => {
+  const fullName = `${first} ${last}`;
+  const alt = `${fullName}'s Image`;
   return (
     <tr>
       <td>
-        <img src={props.picture} alt="Employee Image" />
+        <img src={picture} alt={alt} />
       </td>
-      <td>
-        {props.first} {props.last}
-      </td>
-      <td>{props.phone}</td>
-      <td>{props.email}</td>
-      <td>{moment(props.dob).format("MM-DD-YYYY")}</td>
+      <td>{fullName}</td>
+      <td>{phone}</td>
+      <td>{email}</td>
+      <td>{moment(dob).format("MM-DD-YYYY")}</td>
     </tr>
   );
 };
