@@ -29,44 +29,45 @@ const Home = () => {
 
     // sorts the data in ascending order
     if (!sortOrder || sortOrder === "ascending") {
-      sortedEmployees = [...employees].sort((a, b) =>
+      sortedEmployees = [...searchEmployees].sort((a, b) =>
         a.name.first < b.name.first ? -1 : 1
       );
       setSortOrder("descending");
 
       // sorts data in descending order
     } else {
-      sortedEmployees = [...employees].sort((a, b) =>
+      sortedEmployees = [...searchEmployees].sort((a, b) =>
         a.name.first > b.name.first ? -1 : 1
       );
       setSortOrder("ascending");
     }
-    console.log("test");
-    console.log(sortedEmployees);
-    setEmployees(sortedEmployees);
+    // console.log("test");
+    // console.log(sortedEmployees);
+    //setEmployees(sortedEmployees);
     setSearchEmployees(sortedEmployees);
   };
 
   // search employees function
   const search = (e) => {
     const value = e.target.value;
-    console.log(`value: ${value}`);
+    // console.log(`value: ${value}`);
 
-    if (value === "") {
-      setSearchEmployees(employees);
-      console.log(employees);
-    }
-
-    let filteredEmployees = [...employees].filter((employee) => {
-      return employee.name.first.toLowerCase().includes(value);
+    let filteredEmployees = searchEmployees.filter((employee) => {
+      return employee.name.first.toLowerCase().includes(value.toLowerCase());
     });
 
     setSearchEmployees(filteredEmployees);
-    console.log("filtered");
-    console.log(filteredEmployees);
-    //console.log(searchEmployees);
-    console.log("employees");
-    console.log(employees);
+
+    // resets the employees array to the original API call data
+    if (value === "") {
+      setSearchEmployees(employees);
+      //console.log(employees);
+    }
+    // console.log("filtered");
+    // console.log(filteredEmployees);
+    // //console.log(searchEmployees);
+    // console.log("employees");
+    // console.log(employees);
   };
 
   return (
