@@ -63,7 +63,7 @@ const Home = () => {
           <h1 className="p-3 text-center">Employee Directory</h1>
           <h5 className="p-2 text-center">
             Search for Employees by Phone number via the search box or sort
-            Employees by Name.
+            Employees by Employee Name.
           </h5>
           <div className="row justify-content-center">
             <div className="col-md-2 p-3 ">
