@@ -9,10 +9,10 @@ const EmployeeRow = ({ picture, first, last, phone, email, dob }) => {
       <td>
         <img src={picture} alt={alt} />
       </td>
-      <td>{fullName}</td>
-      <td>{phone}</td>
-      <td>{email}</td>
-      <td>{moment(dob).format("MM-DD-YYYY")}</td>
+      <td className="align-middle">{fullName}</td>
+      <td className="align-middle">{phone}</td>
+      <td className="align-middle">{email}</td>
+      <td className="align-middle">{moment(dob).format("MM-DD-YYYY")}</td>
     </tr>
   );
 };

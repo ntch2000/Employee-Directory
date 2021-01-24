@@ -61,7 +61,7 @@ const Home = () => {
       <div className="row header">
         <div className="col">
           <h1 className="p-3 text-center">Employee Directory</h1>
-          <h5 className="p-3 text-center">
+          <h5 className="p-2 text-center">
             Search for Employees by Phone number via the search box or sort
             Employees by Name.
           </h5>
@@ -78,12 +78,17 @@ const Home = () => {
       <div className="row">
         <div className="col">
           <div className="text-center">
-            <table className="table">
+            <table className="table table-striped">
               <thead>
                 <tr>
                   <th scope="col">Employee Picture</th>
                   <th scope="col" onClick={sortBy}>
-                    Name
+                    {!sortOrder ? null : sortOrder === "ascending" ? (
+                      <i className="arrow up"></i>
+                    ) : (
+                      <i className="arrow down"></i>
+                    )}
+                    Employee Name
                   </th>
                   <th scope="col">Phone</th>
                   <th scope="col">Email</th>

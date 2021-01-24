@@ -5,7 +5,7 @@ const Search = (props) => {
     <input
       className="form-control me-2"
       type="search"
-      placeholder="Search"
+      placeholder="Search by Phone Number"
       aria-label="Search"
       onChange={props.searchEmployees}
     />
