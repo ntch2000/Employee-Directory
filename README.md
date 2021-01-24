@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Employee-Directory
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This is an application that allows for users to view the entire company directory and search for specific employees via their Name, or phone number quickly.
 
-In the project directory, you can run:
+- [Description](#description)
+- [User Story](#user-story)
+- [Business Context](#business-context)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Installation](#installation)
+- [Usage](#usage)
 
-### `npm start`
+## User Story
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Business Context
 
-### `npm test`
+An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Acceptance Criteria
 
-### `npm run build`
+Given a table of random users generated from the [Random User API](https://randomuser.me/), when the user loads the page, a table of employees should render.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The user should be able to:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Sort the table by at least one category
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Filter the users by at least one property.
 
-### `npm run eject`
+## Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+There is no installation required for this application as it is hosted on gh-pages. This is the link to the [Employee Directory Application](https://ntch2000.github.io/employee-directory/).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To view the project files please visit my [GitHub Repository](https://github.com/ntch2000/employee-directory).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Usage
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To utilize this application, go to the application link provided to view the main page. This page will load a table of random user employees from the [Random User API](https://randomuser.me/).
 
-## Learn More
+Users can then sort the table of employees in either ascending or descending order by clicking on the "Employee Name" field. Users can also search for employees by their phone number by typing the numbers in the search box at the top of the page.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Please see the GIF for a demonstration of the application.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Employee Directory Demo GIF](./assets/gifs/emp-directory-demo.gif "Budget Tracker Demo GIF")
 
-### Code Splitting
+_Gif of using the Employee Directory application_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+© 2021 Neil Gandhi
