@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import API from "../utils/API";
 import EmployeeRow from "../components/EmployeeRow/EmployeeRow/EmployeeRow";
+import Search from "../components/EmployeeRow/Search/Search";
+import "./Home.css";
 
 const Home = () => {
   // employees state
@@ -56,19 +58,23 @@ const Home = () => {
 
   return (
     <div>
-      <div className="row">
-        <div className="col-md-2 pt-3">
-          <div className="text-center">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-              onChange={searchEmployees}
-            />
+      <div className="row header">
+        <div className="col">
+          <h1 className="p-3 text-center">Employee Directory</h1>
+          <h5 className="p-3 text-center">
+            Search for Employees by Phone number via the search box or sort
+            Employees by Name.
+          </h5>
+          <div className="row justify-content-center">
+            <div className="col-md-2 p-3 ">
+              <div>
+                <Search searchEmployees={searchEmployees} />
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
       <div className="row">
         <div className="col">
           <div className="text-center">
